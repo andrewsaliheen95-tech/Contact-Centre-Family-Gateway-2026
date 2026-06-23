@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Centre Family Getaway 2026</title>
+    <style>
+        :root {
+            --primary: #f39c12;
+            --bg-grad: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            --card-bg: rgba(255, 255, 255, 0.06);
+            --inner-bg: rgba(0, 0, 0, 0.4);
+            --accent-blue: #3498db;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-grad);
+            color: #fff;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 700px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .header-area {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 { font-size: 2.2rem; margin: 0 0 10px 0; letter-spacing: 1px; color: var(--primary); }
+        h3 { font-weight: 400; color: #ecf0f1; margin: 0 0 5px 0; }
+        .tagline { color: #bdc3c7; font-style: italic; margin: 0 0 25px 0; text-align: center; }
+        
+        /* Countdown styling */
+        .countdown {
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .time-box {
+            background: var(--inner-bg);
+            padding: 20px;
+            border-radius: 12px;
+            flex: 1;
+            text-align: center;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .time-box span { display: block; font-size: 2.8rem; font-weight: bold; color: #fff; }
+        .time-box label { font-size: 0.75rem; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; }
+
+        /* Quick Info Table Block */
+        .quick-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background: var(--inner-bg);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .info-item {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .info-item strong {
+            display: block;
+            color: var(--primary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+        /* Agenda Content Styling */
+        .agenda-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+        }
+
+        .overview-box {
+            background: var(--inner-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #ecf0f1;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .day-block {
+            margin-bottom: 35px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .day-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+
+        .day-subtitle {
+            font-style: italic;
+            color: #bdc3c7;
+            margin: 0 0 20px 0;
+            font-size: 0.95rem;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+        }
+
+        .agenda-item {
+            display: flex;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            align-items: flex-start;
+            line-height: 1.4;
+        }
+        .agenda-item:last-child {
+            margin-bottom: 0;
+        }
+        .time {
+            font-weight: bold;
+            color: var(--accent-blue);
+            min-width: 100px;
+            flex-shrink: 0;
+        }
+        .activity {
+            color: #ecf0f1;
+        }
+        .badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #bdc3c7;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media(max-width: 580px) {
+            h1 { font-size: 1.6rem; }
+            .time-box span { font-size: 1.8rem; }
+            .time-box { padding: 10px; }
+            .countdown { gap: 8px; }
+            .quick-info { grid-template-columns: 1fr; gap: 15px; text-align: left; }
+            .info-item { text-align: left; padding-left: 10px; border-left: 2px solid var(--primary); }
+            .time { min-width: 85px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header-area">
+            <h1>CONTACT CENTRE FAMILY GETAWAY 2026</h1>
+            <h3>Earl’s Regency, Kandy</h3>
+        </div>
+        <p class="tagline">Connect • Celebrate • Create Memories</p>
+        
+        <!-- LIVE COUNTDOWN TIMER -->
+        <div class="countdown">
+            <div class="time-box"><span id="days">00</span><label>Days</label></div>
+            <div class="time-box"><span id="hours">00</span><label>Hours</label></div>
+            <div class="time-box"><span id="minutes">00</span><label>Mins</label></div>
+            <div class="time-box"><span id="seconds">00</span><label>Secs</label></div>
+        </div>
+
+        <!-- TRIP METADATA -->
+        <div class="quick-info">
+            <div class="info-item"><strong>Duration</strong>3 Days / 2 Nights</div>
+            <div class="info-item"><strong>Dates</strong>27 June – 29 June 2026</div>
+            <div class="info-item"><strong>Department</strong>Contact Centre</div>
+        </div>
+
+        <!-- FULL ITINERARY INFO -->
+        <div class="agenda-section">
+            <div class="overview-box">
+                <strong>Journey Overview:</strong> Get ready for an unforgettable getaway with the Contact Centre family! This three-day experience is designed to bring colleagues and their families together through fun, relaxation, entertainment, and memorable moments in the scenic city of Kandy. Participants will depart at 7:00 AM from their respective locations and travel together to Earl’s Regency, Kandy, arriving at approximately 12:30 PM.
+            </div>
+
+            <!-- DAY 1 -->
+            <div class="day-block">
+                <div class="day-title">Day 1 – Saturday, 27 June 2026</div>
+                <div class="day-subtitle">Family Fun & Catching Up</div>
+                
+                <div class="agenda-item"><div class="time">07:00 AM</div><div class="activity">Departure from respective locations</div></div>
+                <div class="agenda-item"><div class="time">12:30 PM</div><div class="activity">Arrival and check-in at Earl’s Regency, Kandy</div></div>
+                <div class="agenda-item"><div class="time">01:00 PM</div><div class="activity">Lunch and room allocation</div></div>
+                <div class="agenda-item"><div class="time">03:00 PM</div><div class="activity">Pool time and leisure activities</div></div>
+                <div class="agenda-item"><div class="time">05:00 PM</div><div class="activity">Family games and team bonding sessions</div></div>
+                <div class="agenda-item"><div class="time">07:30 PM</div><div class="activity">Dinner</div></div>
+                <div class="agenda-item"><div class="time">09:00 PM</div><div class="activity">Relaxation and social gathering</div></div>
+                <p style="margin: 15px 0 0 0; font-size: 0.9rem; color: #bdc3c7; font-style: italic;">The first day is all about reconnecting, unwinding, and creating memories with colleagues and family members through fun-filled activities and quality time together.</p>
+            </div>
+
+            <!-- DAY 2 -->
+            <div class="day-block">
+                <div class="day-title">Day 2 – Sunday, 28 June 2026</div>
+                <div class="day-subtitle">Explore Kandy & DJ Gala Night</div>
+                
+                <div class="agenda-item"><div class="time">07:30 AM</div><div class="activity">Breakfast</div></div>
+                <div class="agenda-item"><div class="time">09:00 AM</div><div class="activity">Kandy city visit and sightseeing</div></div>
+                <div class="agenda-item"><div class="time">12:30 PM</div><div class="activity">Lunch</div></div>
+                <div class="agenda-item"><div class="time">02:00 PM</div><div class="activity">Pool time and leisure activities</div></div>
+                <div class="agenda-item"><div class="time">04:00 PM</div><div class="activity">Fun games and team challenges</div></div>
+                <div class="agenda-item">
+                    <div class="time">07:00 PM</div>
+                    <div class="activity">Gala Dinner <span class="badge">Dress code: Smart Casual</span></div>
+                </div>
+                <div class="agenda-item"><div class="time">08:00 PM+</div><div class="activity">DJ Gala Night</div></div>
+                <p style="margin: 15px 0 0 0; font-size: 0.9rem; color: #bdc3c7; font-style: italic;">The highlight of the getaway! Enjoy a spectacular evening filled with music, dancing, entertainment, laughter, and celebration with the entire Contact Centre family.</p>
+            </div>
+
+            <!-- DAY 3 -->
+            <div class="day-block">
+                <div class="day-title">Day 3 – Monday, 29 June 2026</div>
+                <div class="day-subtitle">Farewell & Safe Journey Home</div>
+                
+                <div class="agenda-item"><div class="time">08:00 AM</div><div class="activity">Breakfast at the hotel</div></div>
+                <div class="agenda-item"><div class="time">09:00 AM</div><div class="activity">Free time to relax, enjoy the hotel facilities, capture memorable photographs, and spend quality time with colleagues and family members</div></div>
+                <div class="agenda-item"><div class="time">11:30 AM</div><div class="activity">Check-out from Earl’s Regency, Kandy</div></div>
+                <div class="agenda-item"><div class="time">12:00 PM</div><div class="activity">Departure for respective destinations</div></div>
+                <p style="margin: 15px 0 0 0; font-size: 0.9rem; color: #bdc3c7; font-style: italic;">As the getaway comes to an end, take a moment to reflect on the memories created, friendships strengthened, and experiences shared before heading home refreshed and inspired.</p>
+            </div>
+
+            <!-- FOOTER INFO -->
+            <div class="footer-note">
+                <strong>Venue:</strong> Earl’s Regency, Kandy<br>
+                <strong>Organized By:</strong> Contact Centre Department
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set countdown date (June 27, 2026 at 07:00 AM)
+        const targetDate = new Date("June 27, 2026 07:00:00").getTime();
+
+        const updateCountdown = setInterval(() => {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            // Calculations for Days, Hours, Minutes, and Seconds
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(Math.max(0, days)).padStart(2, '0');
+            document.getElementById("hours").innerText = String(Math.max(0, hours)).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(Math.max(0, minutes)).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(Math.max(0, seconds)).padStart(2, '0');
+
+            // Message update when counter reaches zero
+            if (difference < 0) {
+                clearInterval(updateCountdown);
+                document.querySelector(".countdown").innerHTML = "<h2 style='color: #f39c12; width:100%; text-align:center;'>The Getaway Has Begun! 🎉</h2>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
